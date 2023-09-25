@@ -20,4 +20,4 @@ _start:
 				# 프로그램을 종료시키는 exit 시스템 호출 실행. 프로그램 종료
 
 msg:
-	.ascii	I love OS\n"
+	.ascii	"I love OS\n"
