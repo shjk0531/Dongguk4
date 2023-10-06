@@ -3,27 +3,28 @@
 
 int main()
 {
-	int x, y;
-	char a;
+	int x, y, z, tmp;
+	scanf("%d %d %d", &x, &y, &z);
 
-	scanf("%d, %d, %c", &x, &y, &a);
-
-	switch (a)
+	if (x > y)
 	{
-	case '*':
-		printf("%d %c %d = %d", x, a, y, (x * y));
-	case '+':
-		printf("%d %c %d = %d", x, a, y, x + y);
-	case '-':
-		printf("%d %c %d = %d", x, a, y, x - y);
-	case '/':
-		printf("%d %c %d = %d", x, a, y, x / y);
-	case '%':
-		printf("%d %c %d = %d", x, a, y, x % y);
-	default:
-		break;
+		tmp = x;
+		x = y;
+		y = tmp;
 	}
-
+	if (y > z)
+	{
+		tmp = y;
+		y = z;
+		z = tmp;
+	}
+	if (x > y)
+	{
+		tmp = x;
+		x = y;
+		y = tmp;
+	}
+	printf("%d", y);
 
 	return 0;
 }
