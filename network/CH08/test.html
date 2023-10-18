@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="a">
+        <button id="btn1">버튼 1</button>
+        <div id="click_result1">0</div>
+        <div id="timer1">0</div>
+      </div>
+      <div class="a">
+        <button id="btn2">버튼 2</button>
+        <div id="click_result2">0</div>
+        <div id="timer2">0</div>
+      </div>
+      <div class="a">
+        <button id="btn3">버튼 3</button>
+        <div id="click_result3">0</div>
+        <div id="timer3">0</div>
+      </div>
+    </div>
+
+    <script>
+      let cnt1 = 0;
+      let cnt2 = 0;
+      let cnt3 = 0;
+      let tCnt1 = 0;
+      let tCnt2 = 0;
+      let tCnt3 = 0;
+      let intervalId;
+      const clickEvent = function (event) {
+        console.log(event);
+        console.log(event.srcElement.id);
+        switch (event.srcElement.id) {
+          case "btn1":
+            cnt1++;
+            click_result1.innerHTML = cnt1;
+            break;
+          case "btn2":
+            cnt2++;
+            click_result2.innerHTML = cnt2;
+            break;
+          case "btn3":
+            cnt3++;
+            click_result3.innerHTML = cnt3;
+            break;
+        }
+      };
+
+      const clickTimer = function (event) {
+        switch (event.srcElement.id) {
+          case "btn1":
+            clearInterval(intervalId);
+            intervalId = setInterval(() => {
+              tCnt1++;
+              timer1.innerHTML = tCnt1;
+              btn1.removeEventListener("click", clickTimer);
+            }, 1000);
+            break;
+          case "btn2":
+            clearInterval(intervalId);
+            intervalId = setInterval(() => {
+              tCnt2++;
+              timer2.innerHTML = tCnt2;
+              btn2.removeEventListener("click", clickTimer);
+            }, 1000);
+            break;
+          case "btn3":
+            clearInterval(intervalId);
+            intervalId = setInterval(() => {
+              tCnt3++;
+              timer3.innerHTML = tCnt3;
+              btn3.removeEventListener("click", clickTimer);
+            }, 1000);
+            break;
+        }
+      };
+
+      btn1.addEventListener("click", clickEvent);
+      btn2.addEventListener("click", clickEvent);
+      btn3.addEventListener("click", clickEvent);
+      btn1.addEventListener("click", clickTimer);
+      btn2.addEventListener("click", clickTimer);
+      btn3.addEventListener("click", clickTimer);
+      //   btn1.removeEventListener("click", clickTimer);
+      //   btn2.removeEventListener("click", clickTimer);
+      //   btn3.removeEventListener("click", clickTimer);
+    </script>
+    <style>
+      .container {
+        display: flex;
+      }
+      .a {
+        margin: 100px;
+      }
+    </style>
+  </body>
+</html>
