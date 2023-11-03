@@ -1,22 +1,28 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
-
+	
 
 int main()
 {
-	int num, cnt, result = 1;
-	printf("실수의 값을 입력하시오: ");
-	scanf("%d", &num);
-	printf("거듭 제곱 횟수를 입력하시오: ");
-	scanf("%d", &cnt);
+    int n, i, j, cnt = 0;
+    scanf("%d", &n);
 
-	for (int i = 0; i < cnt; i++)
-	{
-		result *= num;
-	}
+    for (i = 1; i <= n; i++) {
+        for (j = 1; j <= i; j++) {
+            cnt++;
+            printf("%d ", cnt);
+        }
+        printf("\n");
+    }
 
-	printf("결과값은 %d\n", result);
+    for (i = n; i >= 0; i--) {
+        for (j = 1; j < i; j++) {
+            cnt++;
+            printf("%d ", cnt);
+        }
+        printf("\n");
+    }
 
 
     return 0;

@@ -1,8 +1,6 @@
 레시피 api
+https://www.foodsafetykorea.go.kr/api/newDatasetDetail.do
+
 https://rapidapi.com/spoonacular/api/recipe-food-nutrition
 
 https://spoonacular.com/food-api/pricing
-
-
-https://www.foodsafetykorea.go.kr/api/newDatasetDetail.do
-

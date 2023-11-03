@@ -56,24 +56,21 @@
           case "btn1":
             clearInterval(intervalId);
             intervalId = setInterval(() => {
-              tCnt1++;
-              timer1.innerHTML = tCnt1;
+              timer1.innerHTML = ++tCnt1;
               btn1.removeEventListener("click", clickTimer);
             }, 1000);
             break;
           case "btn2":
             clearInterval(intervalId);
             intervalId = setInterval(() => {
-              tCnt2++;
-              timer2.innerHTML = tCnt2;
+              timer2.innerHTML = ++tCnt2;
               btn2.removeEventListener("click", clickTimer);
             }, 1000);
             break;
           case "btn3":
             clearInterval(intervalId);
             intervalId = setInterval(() => {
-              tCnt3++;
-              timer3.innerHTML = tCnt3;
+              timer3.innerHTML = ++tCnt3;
               btn3.removeEventListener("click", clickTimer);
             }, 1000);
             break;
@@ -86,9 +83,6 @@
       btn1.addEventListener("click", clickTimer);
       btn2.addEventListener("click", clickTimer);
       btn3.addEventListener("click", clickTimer);
-      //   btn1.removeEventListener("click", clickTimer);
-      //   btn2.removeEventListener("click", clickTimer);
-      //   btn3.removeEventListener("click", clickTimer);
     </script>
     <style>
       .container {
